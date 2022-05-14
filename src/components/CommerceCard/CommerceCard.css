@@ -1,0 +1,40 @@
+.CommerceCard {
+    /* margin: 30px 20px; */
+    border-radius: 20px;
+    border: none;
+}
+
+.ImgContain {
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+}
+
+.myContainer {
+    position: relative;
+    width: 100%;
+}
+
+.overlayImg {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    transition: .2s ease;
+    opacity: 0;
+    text-align: center;
+}
+
+.commerceCard:hover .overlayImg {
+    opacity: 0.8;
+}
+
+.cardText {
+    opacity: 0;
+}
+
+.commerceCard:hover .cardText {
+    opacity: 1;
+}

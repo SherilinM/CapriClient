@@ -1,0 +1,17 @@
+.img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.search-input {
+    position: absolute;
+    z-index: 100;
+    justify-content: center;
+}
