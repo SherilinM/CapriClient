@@ -3,7 +3,7 @@ import axios from 'axios'
 class CommerceService {
 
     constructor() {
-        this.api = axios.create({ baseURL: 'http://localhost:5005/api/commerce' })
+        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/commerce` })
 
         this.api.interceptors.request.use((config) => {
 

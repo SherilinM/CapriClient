@@ -3,7 +3,7 @@ import axios from 'axios'
 class CommentService {
 
     constructor() {
-        this.api = axios.create({ baseURL: 'http://localhost:5005/api/comment' })
+        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/comment` })
 
         this.api.interceptors.request.use((config) => {
 
