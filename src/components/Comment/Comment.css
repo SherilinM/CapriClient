@@ -1,0 +1,9 @@
+.profileImg {
+    width: 3%;
+    height: 3%;
+    border-radius: 100%;
+}
+
+.userName {
+    left: 20%;
+}

@@ -24,7 +24,11 @@
     height: 100%;
     margin: 0 auto;
     position: absolute;
-    left: 27%;
-    bottom: 23%;
-    top: 22%;
+    left: 26%;
+    bottom: 25%;
+    top: 40%;
+}
+
+.form-bg {
+    background-color: red;
 }

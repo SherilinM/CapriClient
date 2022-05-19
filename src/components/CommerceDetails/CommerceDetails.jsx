@@ -14,7 +14,8 @@ import './CommerceDetails.css'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { geocodeByAddress } from 'react-google-places-autocomplete';
 import LikeBtn from "../LikeBtn/LikeBtn"
-
+import CommentForm from "../CommenteForm/CommentForm"
+import Comment from "../Comment/Comment"
 
 const CommerceDetails = () => {
 
@@ -28,7 +29,7 @@ const CommerceDetails = () => {
 
     const { commerce_id } = useParams()
 
-    const { user } = useContext(AuthContext)
+    const { user, isLoggedIn } = useContext(AuthContext)
 
     const handleEditBtn = () => setShowModal(true)
     const handleSaveBtn = () => setShowModal(false)
@@ -147,6 +148,7 @@ const CommerceDetails = () => {
                             />
                         </Col>
                     </Row>
+
                     <div className="comments-section">
                         <h3>Comments</h3>
                         <ul>
@@ -154,12 +156,15 @@ const CommerceDetails = () => {
                                 !comments ? <Loader /> :
                                     comments.map(eachComment => {
                                         return (
-                                            <li key={eachComment._id}>{eachComment.comment}</li>
+                                            <Comment key={eachComment._id} {...eachComment}></Comment>
                                         )
                                     })
                             }
                         </ul>
                     </div>
+
+                    {isLoggedIn && <CommentForm getComments={getComments} />}
+
                     <Modal show={showModal} onHide={handleSaveBtn} size="lg">
                         <Modal.Header closeButton>
                             <Modal.Title>Edit commerce information</Modal.Title>

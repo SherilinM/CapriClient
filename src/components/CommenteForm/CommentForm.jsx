@@ -1,21 +1,21 @@
 import { useContext, useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import commentService from "../../services/comments.service"
 import { AuthContext } from "../../context/auth.context"
-import { Form, Button } from "react-bootstrap"
+import { Form, Button, Col } from "react-bootstrap"
+import './CommentForm.css'
 
 
-
-
-const CommentForm = () => {
+const CommentForm = ({ getComments }) => {
 
     const { user } = useContext(AuthContext)
     const [value, setValue] = useState(null);
 
     const [commentForm, setCommentForm] = useState({
         comment: '',
-
     })
+
+    const { commerce_id } = useParams()
 
     useEffect(() => {
         setCommentForm({
@@ -41,9 +41,10 @@ const CommentForm = () => {
         e.preventDefault()
 
         commentService
-            .createComment(commentForm)
+            .createComment(commerce_id, commentForm)
             .then(() => {
-                navigate('/commercesDetails')
+                getComments()
+                setCommentForm({ comment: '' })
             })
             .catch(err => console.log(err))
     }
@@ -52,24 +53,17 @@ const CommentForm = () => {
     const { comment } = commentForm
 
     return (
+        <Col lg={8}>
+            <Form className='commentForm' onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="comment">
+                    <Form.Label>Comment</Form.Label>
+                    <Form.Control type="text" value={commentForm.comment} onChange={handleInputChange} name="comment" />
+                </Form.Group>
 
-        <Form.Group className="mb-3" controlId="comment">
-            <Form.Label>Comment</Form.Label>
-            <Form.Control type="text" value={commentForm.comment} onChange={handleInputChange} name="comment" />
-        </Form.Group>
-
+                <Button variant="dark" type="submit">Comment</Button>
+            </Form>
+        </Col>
     )
-
-
 }
-
-
-
-
-
-
-
-
-
 
 export default CommentForm

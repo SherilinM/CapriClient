@@ -44,19 +44,18 @@ const Loginform = () => {
 
                 <Col lg={6}>
                     <Form.Group className="text-grey" controlId="email">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" onChange={handleInputChange} name="email" value={email} />
+                        <Form.Control type="email" onChange={handleInputChange} placeholder="Email" name="email" value={email} />
                     </Form.Group>
                 </Col>
 
                 <Col lg={6}>
                     <Form.Group className="text-grey" controlId="password">
-                        <Form.Label>Contraseña</Form.Label>
-                        <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
+                        <Form.Label></Form.Label>
+                        <Form.Control type="password" onChange={handleInputChange} placeholder="Password" name="password" value={password} />
                     </Form.Group>
                 </Col>
 
-                <Button variant="dark" type="submit">Acceder</Button>
+                <Button className='button' variant="dark" type="submit">Acceder</Button>
             </Form>
         </div>
     )

@@ -4,10 +4,21 @@ class CommentService {
 
     constructor() {
         this.api = axios.create({ baseURL: 'http://localhost:5005/api/comment' })
+
+        this.api.interceptors.request.use((config) => {
+
+            const storedToken = localStorage.getItem("authToken");
+
+            if (storedToken) {
+                config.headers = { Authorization: `Bearer ${storedToken}` }
+            }
+
+            return config
+        })
     }
 
-    createComment = comment => {
-        return this.api.post(`/create`, comment)
+    createComment = (id, comment) => {
+        return this.api.post(`/${id}/create`, comment)
     }
 
     editComment = (id, commentInfo) => {
