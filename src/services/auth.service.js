@@ -28,6 +28,10 @@ class AuthService {
         return this.app.post('/login', user)
     }
 
+    // commerceSignup(credentials, latitude, longitude) {
+    //     return this.api.post('/commerce-signup', credentials, latitude, longitude)
+    // }
+
     verify = token => {
         return this.app.get('/verify', { headers: { Authorization: `Bearer ${token}` } })
     }

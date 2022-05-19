@@ -1,0 +1,56 @@
+html {
+    background-color: #1e2123;
+}
+
+.bg-obd {
+    background-color: #1e2123
+}
+
+.wrapper {
+    padding-top: 4.5rem;
+}
+
+.right-data div:first-child {
+    border-radius: .7rem;
+    box-shadow: 5px 5px 10px solid rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+    color: #b5b5b5;
+    fill: #b5b5b5;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    color: #fbfbfb;
+    fill: #fbfbfb;
+}
+
+.commerce-title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.commerce-name {
+    margin-left: 8px;
+}
+
+.commerce-icons {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.edit-icon {
+    cursor: pointer;
+}
+
+.commerce-name h3 span {
+    transform: scale(0.9);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: 5px;
+    color: lightgray;
+}

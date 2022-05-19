@@ -11,7 +11,20 @@ const CommerceList = () => {
     useEffect(() => {
         commerceService
             .getAllCommerces()
-            .then(({ data }) => setCommerces(data))
+            .then(({ data }) => {
+                let result = data
+                let theCat = window.localStorage.getItem('theCat')
+                if (data && theCat && (theCat != '') && (theCat.toLowerCase() !== 'categories')) {
+                    console.log("parsing data")
+                    result = data.filter(theData => {
+                        return theData.category === theCat
+                    })
+                    //Reset
+                    window.localStorage.removeItem('theCat')
+                }
+                setCommerces(result)
+                console.log(commerces)
+            })
             .then(err => console.log(err))
     }, [])
 
@@ -22,7 +35,7 @@ const CommerceList = () => {
                 {
                     commerces.map(commerce => {
                         return (
-                            <Col md={{ span: 6 }} key={commerce._id} className="p-2">
+                            <Col md={{ span: 12 }} key={commerce._id} className="p-2">
                                 <CommerceCard {...commerce} />
                             </Col>
                         )
@@ -35,3 +48,29 @@ const CommerceList = () => {
 }
 
 export default CommerceList
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

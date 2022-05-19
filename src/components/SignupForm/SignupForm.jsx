@@ -1,5 +1,6 @@
+import './Signup.css'
 import { useState } from "react"
-import { Form, Button } from "react-bootstrap"
+import { Form, Button, Container, Col, Row, FormSelect } from "react-bootstrap"
 import authService from "../../services/auth.service"
 import { useNavigate } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ const SignupForm = () => {
         profileImg: '',
         telephone: '',
         username: '',
+        role: '',
         password: '',
         email: ''
     })
@@ -33,49 +35,91 @@ const SignupForm = () => {
         setSignupData({ ...signupData, [name]: value })
     }
 
-    const { firstName, lastName, telephone, profileImg, username, password, email } = signupData
+    const { firstName, lastName, telephone, profileImg, username, role, password, email } = signupData
 
     return (
 
-        <Form onSubmit={handleSubmit}>
 
-            <Form.Group className="mb-3" controlId="firstName">
-                <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" onChange={handleInputChange} name="firstName" value={firstName} />
-            </Form.Group>
+        <div className="hera">
+            <div className='bg-imge'>
+                {/* <div className='bg-overly' /> */}
 
-            <Form.Group className="mb-3" controlId="lasName">
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" onChange={handleInputChange} name="lastName" value={lastName} />
-            </Form.Group>
+                <Col lg={8} className="mx-auto m-0 p-5 ">
+                    <Row>
+                        <Form onSubmit={handleSubmit}>
+                            <Col lg={12} className="input-form z-index n1">
+                                <Row>
+                                    <Col lg={6}>
+                                        <Form.Group className="mb-3" controlId="firstName">
+                                            <Form.Label className="text-white">First Name</Form.Label>
+                                            <Form.Control type="text" onChange={handleInputChange} name="firstName" value={firstName} />
+                                        </Form.Group>
+                                    </Col>
 
-            <Form.Group className="mb-3" controlId="telephone">
-                <Form.Label>Telephone</Form.Label>
-                <Form.Control type="number" onChange={handleInputChange} name="telephone" value={telephone} />
-            </Form.Group>
+                                    <Col lg={6}>
+                                        <Form.Group className="mb-3" controlId="lasName">
+                                            <Form.Label className="text-white">Last Name</Form.Label>
+                                            <Form.Control type="text" onChange={handleInputChange} name="lastName" value={lastName} />
+                                        </Form.Group>
+                                    </Col>
 
-            <Form.Group className="mb-3" controlId="profileImg">
-                <Form.Label>Profile Image</Form.Label>
-                <Form.Control type="text" onChange={handleInputChange} name="profileImg" value={profileImg} />
-            </Form.Group>
+                                    <Col lg={6}>
+                                        <Form.Group className="mb-3" controlId="telephone">
+                                            <Form.Label className="text-white">Telephone</Form.Label>
+                                            <Form.Control type="number" onChange={handleInputChange} name="telephone" value={telephone} />
+                                        </Form.Group>
+                                    </Col>
 
-            <Form.Group className="mb-3" controlId="username">
-                <Form.Label>Username</Form.Label>
-                <Form.Control type="text" onChange={handleInputChange} name="username" value={username} />
-            </Form.Group>
+                                    <Col lg={6}>
+                                        <Form.Group className="mb-3 text-white" controlId="profileImg">
+                                            <Form.Label>Profile Image</Form.Label>
+                                            <Form.Control type="text" onChange={handleInputChange} name="profileImg" value={profileImg} />
+                                        </Form.Group>
+                                    </Col>
 
-            <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" onChange={handleInputChange} name="email" value={email} />
-            </Form.Group>
+                                    <Col lg={6}>
+                                        <Form.Group className="mb-3" controlId="username">
+                                            <Form.Label className="text-white">Username</Form.Label>
+                                            <Form.Control type="text" onChange={handleInputChange} name="username" value={username} />
+                                        </Form.Group>
+                                    </Col >
 
-            <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
-            </Form.Group>
+                                    <Col lg={6}>
+                                        <FormSelect className="User" type="text" name="role" value={role} onChange={handleInputChange}>
+                                            <option className="form-input">User or Commerce?</option>
+                                            <option className="form-input" value="USER">User</option>
+                                            <option className="form-input" value="COMMERCE">Commerce</option>
+                                        </FormSelect>
+                                    </Col>
 
-            <Button variant="dark" type="submit">Signup</Button>
-        </Form>
+                                    <Col lg={6}>
+                                        <Form.Group className="mb-3" controlId="email">
+                                            <Form.Label className="text-white">Email</Form.Label>
+                                            <Form.Control type="email" onChange={handleInputChange} name="email" value={email} />
+                                        </Form.Group>
+                                    </Col >
+
+                                    <Col lg={6}>
+                                        <Form.Group className="mb-3" controlId="password">
+                                            <Form.Label className="text-white">Password</Form.Label>
+                                            <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
+                                        </Form.Group>
+                                    </Col >
+
+                                    <Button variant="dark" type="submit">Signup</Button>
+                                </Row>
+
+                            </Col>
+                        </Form>
+
+                    </Row>
+
+                </Col>
+
+            </div >
+        </div >
+
+
     )
 }
 

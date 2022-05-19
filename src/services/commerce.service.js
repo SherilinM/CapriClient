@@ -4,6 +4,17 @@ class CommerceService {
 
     constructor() {
         this.api = axios.create({ baseURL: 'http://localhost:5005/api/commerce' })
+
+        this.api.interceptors.request.use((config) => {
+
+            const storedToken = localStorage.getItem("authToken");
+
+            if (storedToken) {
+                config.headers = { Authorization: `Bearer ${storedToken}` }
+            }
+
+            return config
+        })
     }
 
     getAllCommerces = () => {
@@ -18,6 +29,10 @@ class CommerceService {
         return this.api.get(`/${id}`)
     }
 
+    getAllPropertiesOfOneUser = () => {
+        return this.api.get(`/get-my-commerces`)
+    }
+
     editCommerce = (id, commerceInfo) => {
         return this.api.put(`/${id}/edit`, commerceInfo)
     }
@@ -26,13 +41,14 @@ class CommerceService {
         return this.api.delete(`/${id}/delete`)
     }
 
-    addCommerceToFav = id => {
-        return this.api.put(`/${id}/add-to-fav`)
+    addLike = id => {
+        return this.api.put(`/${id}/like`)
     }
 
-    removeCommerceFromFav = id => {
-        return this.api.put(`/${id}/remove-from-fav`)
+    delLike = id => {
+        return this.api.put(`/${id}/unlike`)
     }
+
 }
 
 const commerceService = new CommerceService()

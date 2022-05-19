@@ -1,0 +1,45 @@
+.h_container {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 40px;
+
+}
+
+#heart {
+    font-size: 1.3rem;
+    color: rgb(241, 241, 241);
+}
+
+#heart:hover {
+    color: rgb(255, 156, 156);
+}
+
+.badge-likes {
+    display: inline-flex;
+    padding: 0.55em;
+    padding-right: .85rem;
+    font-size: .80em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    align-items: center;
+    gap: 5px;
+    border-radius: 50rem !important;
+    background-color: rgba(106, 106, 106, .25);
+    cursor: pointer;
+
+}
+
+.badge-likes:hover #heart {
+    color: rgb(255, 156, 156);
+}
+
+.badge-likes:hover .h_container {
+    border-color: rgb(255, 156, 156);
+}

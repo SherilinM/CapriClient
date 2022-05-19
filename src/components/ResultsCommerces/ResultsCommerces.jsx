@@ -3,7 +3,7 @@ import CommerceCard from "../CommerceCard/CommerceCard"
 
 const ResultsCommerces = ({ commerces, width }) => {
 
-    console.log('lallllalla--->', commerces)
+    console.log('mis favoritos son -->', commerces)
 
     return (
         <>

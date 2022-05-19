@@ -1,0 +1,34 @@
+.bg-dark {
+    background-color: #020303 !important;
+}
+
+.sticky-wrapper {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+}
+
+.img-art {
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+    background: url("https://cdn.dribbble.com/users/1626229/screenshots/15810762/media/916eef68bbeb5564e2134be812527408.jpg") no-repeat center top fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+}
+
+@media screen and (max-width: 700px) {
+
+    .sticky-wrapper {
+        position: relative;
+        height: auto;
+    }
+
+    .img-art {
+        height: 80px;
+        background: url("https://cdn.dribbble.com/users/1626229/screenshots/15810762/media/916eef68bbeb5564e2134be812527408.jpg") no-repeat center center fixed;
+
+    }
+
+}

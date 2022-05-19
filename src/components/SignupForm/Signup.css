@@ -1,0 +1,30 @@
+.bg-imge {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("https://cdn.dribbble.com/users/1626229/screenshots/15810762/media/916eef68bbeb5564e2134be812527408.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-overly {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.input-form {
+    width: 100%;
+    max-width: 628px;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    left: 27%;
+    bottom: 23%;
+    top: 22%;
+}

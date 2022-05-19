@@ -6,9 +6,9 @@ class CommentService {
         this.api = axios.create({ baseURL: 'http://localhost:5005/api/comment' })
     }
 
-    // createComment = comment => {
-    //     return this.api.post(`/create`, comment)
-    // }
+    createComment = comment => {
+        return this.api.post(`/create`, comment)
+    }
 
     editComment = (id, commentInfo) => {
         return this.api.put(`/${id}/edit`, commentInfo)

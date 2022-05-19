@@ -60,7 +60,7 @@ const UserProfilePage = () => {
 
                 <h2 className="section-title">Favorite Commerces</h2>
                 <Row>
-                    {isLoaded && <ResultsCommerces commerces={userDetails.favCommerce} width={7} />}
+                    {isLoaded && <ResultsCommerces commerces={userDetails?.favCommerce} width={7} />}
                 </Row>
 
                 <Modal show={showUserModal} onHide={handleSaveUserBtn} size="lg">

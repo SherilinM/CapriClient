@@ -1,11 +1,11 @@
 // import { useState } from "react";
 import { Container } from "react-bootstrap"
-import NewCommerceForm from "../NewCommerceForm/NewCommerceForm"
+import NewCommerceForm from "../../components/NewCommerceForm/NewCommerceForm"
 
 
 // import commerceService from "../../services/commerce.service";
 
-const NewCommerce = () => {
+const NewCommercePage = () => {
     return (
         <Container>
             <h1> New Commerce</h1>
@@ -16,4 +16,4 @@ const NewCommerce = () => {
 }
 
 
-export default NewCommerce
+export default NewCommercePage

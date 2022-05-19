@@ -28,6 +28,16 @@ class UserService {
     deleteUser = id => {
         return this.api.delete(`/${id}/delete`)
     }
+
+    addCommerceToFav = id => {
+        return this.api.put(`/${id}/add-to-fav`)
+    }
+
+    removeCommerceFromFav = id => {
+        return this.api.put(`/${id}/remove-from-fav`)
+    }
+
+
 }
 
 const userService = new UserService()

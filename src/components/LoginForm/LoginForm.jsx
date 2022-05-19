@@ -1,5 +1,6 @@
+import './LoginForm.css'
 import { useContext, useState } from "react"
-import { Form, Button } from "react-bootstrap"
+import { Form, Button, Col } from "react-bootstrap"
 import authService from "../../services/auth.service"
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './../../context/auth.context'
@@ -38,21 +39,26 @@ const Loginform = () => {
 
     return (
 
-        <Form onSubmit={handleSubmit}>
+        <div className='bg-imge'>
+            <Form className="input-login" onSubmit={handleSubmit}>
 
-            <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" onChange={handleInputChange} name="email" value={email} />
-            </Form.Group>
+                <Col lg={6}>
+                    <Form.Group className="text-grey" controlId="email">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" onChange={handleInputChange} name="email" value={email} />
+                    </Form.Group>
+                </Col>
 
-            <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Contraseña</Form.Label>
-                <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
-            </Form.Group>
+                <Col lg={6}>
+                    <Form.Group className="text-grey" controlId="password">
+                        <Form.Label>Contraseña</Form.Label>
+                        <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
+                    </Form.Group>
+                </Col>
 
-            <Button variant="dark" type="submit">Acceder</Button>
-        </Form>
-
+                <Button variant="dark" type="submit">Acceder</Button>
+            </Form>
+        </div>
     )
 }
 

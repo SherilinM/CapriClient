@@ -1,17 +1,106 @@
-.img {
-    width: 100%;
+html {
+    background-color: #1e2123
+}
+
+:root {
+    --hero-height: 350px;
+}
+
+.bg-obs {
+    background-color: #191a1a;
+}
+
+/*Images*/
+.cover {
     object-fit: cover;
+    width: 100%;
+    min-width: 100%;
+    height: var(--hero-height);
 }
 
-.hero-wrapper {
+.hero {
+    height: var(--hero-height);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
 }
 
-.search-input {
+.bg-img {
+    width: 100%;
+    height: var(--hero-height);
     position: absolute;
-    z-index: 100;
-    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: url("https://cdn.dribbble.com/users/1626229/screenshots/15810762/media/916eef68bbeb5564e2134be812527408.jpg") no-repeat center top fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-overlay {
+    width: 100%;
+    height: var(--hero-height);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.input-elements {
+    z-index: 1;
+    width: 100%;
+    max-width: 628px;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-transform: translateY(85%);
+    -ms-transform: translateY(85%);
+    transform: translateY(85%);
+}
+
+.hero-text {
+    transform: translateY(50%);
+}
+
+.search-hero-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.input-search-bar.form-control {
+    border: 0px solid;
+}
+
+.input-elements .input-group {
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+#capri-btn-cat {
+    background-color: white;
+    border-color: white;
+    color: #6c757d;
+}
+
+.input-elements .input-group-text {
+    background-color: white;
+    border-color: white;
+}
+
+
+.input-group-text .search-icon-group {
+    fill: #6c757d;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-group-text {
+    height: 100%;
+    cursor: pointer;
 }
